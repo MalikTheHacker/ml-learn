@@ -1,2 +1,6 @@
 pandas
--e .
+numpy
+seaborn
+matplotlib
+ipykernel
+# -e .
