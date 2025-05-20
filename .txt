@@ -1,0 +1,10 @@
+END  to end projects
+
+Data Injestion
+Data Tranformation
+Model Trainer
+Model evaluation
+Model deployment
+
+in the form of CI/CD pipelines.
+we'll start with github actions, aws actions
