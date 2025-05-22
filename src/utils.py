@@ -21,3 +21,19 @@ def save_object(file_path, obj):
 
     except Exception as e:
         raise CustomException(e, sys)
+    
+
+def evaluate_models(X_train, y_train, X_test, y_test, models: dict):
+    try:
+        report = dict()
+        for i, model in enumerate(list(models.values())):
+            
+            model.fit(X_train, y_train)
+            y_preds = model.predict(X_test)
+
+            score = r2_score(y_test, y_preds)
+
+            report[list(models.keys())[i]] = score
+        return report
+    except Exception as e:
+        raise CustomException(e, sys)

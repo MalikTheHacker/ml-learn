@@ -5,7 +5,9 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '.
 from src.exception import CustomException
 from src.logger import logging
 
+
 from src.components.data_transformation import DataTransformation
+from src.components.model_trainer import ModelTrainer
 
 
 import pandas as pd
@@ -49,5 +51,13 @@ class DataIngestion:
 
 if __name__ == "__main__":
     obj = DataIngestion()
-
+    train_data_path, test_data_path = obj.initiate_data_ingestion()
+    logging.info("transforming...")
+    transformer = DataTransformation()
+    train_arr, test_arr, preprocessor_path  = transformer.initiate_data_transformation(train_data_path, train_data_path)
+    logging.info("training")
+    trainer = ModelTrainer()
+    higest_score = trainer.initiate_model_trainer(train_arr=train_arr, test_Arr=test_arr)
+    print("trainer highest score", higest_score)
+    
 
