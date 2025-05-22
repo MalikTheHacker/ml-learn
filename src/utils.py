@@ -23,17 +23,20 @@ def save_object(file_path, obj):
         raise CustomException(e, sys)
     
 
-def evaluate_models(X_train, y_train, X_test, y_test, models: dict):
+def evaluate_models(X_train, y_train, X_test, y_test, models: dict, params: dict):
     try:
         report = dict()
         for i, model in enumerate(list(models.values())):
-            
-            model.fit(X_train, y_train)
+            model_name = list(models.keys())[i]
+            param_grid = params[model_name]
+            grid = GridSearchCV(model, param_grid, cv=5, scoring="r2")
+            grid.fit(X_train, y_train)
+            model=grid.best_estimator_
             y_preds = model.predict(X_test)
 
             score = r2_score(y_test, y_preds)
 
-            report[list(models.keys())[i]] = score
+            report[model_name] = score
         return report
     except Exception as e:
         raise CustomException(e, sys)
