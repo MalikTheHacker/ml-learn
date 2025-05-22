@@ -5,6 +5,9 @@ sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '.
 from src.exception import CustomException
 from src.logger import logging
 
+from src.components.data_transformation import DataTransformation
+
+
 import pandas as pd
 from sklearn.model_selection import train_test_split
 from dataclasses import dataclass
@@ -28,7 +31,7 @@ class DataIngestion:
             df=pd.read_csv("notebooks\data\stud.csv")
             logging.info("read the dataset into a dataframe")
 
-            os.makedirs(os.path.dirname(self.ingestion_config.train_data_path))
+            os.makedirs(os.path.dirname(self.ingestion_config.train_data_path), exist_ok=True)
             
             df.to_csv(self.ingestion_config.raw_data_path, index=None, header=True)
 
@@ -46,6 +49,5 @@ class DataIngestion:
 
 if __name__ == "__main__":
     obj = DataIngestion()
-    obj.initiate_data_ingestion()
 
 
