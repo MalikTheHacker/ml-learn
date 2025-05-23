@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+
+
+<html>
+
+<head>
+    <link rel="stylesheet" href="styles.css">
+    <title> math score</title>
+</head>
+
+
+<body>
+    <div class='signup-container'>
+        <div class='left-container'>
+            <h1>
+                <i class='fas fa-paw'></i>
+                Scorer: <span>{{ score }}</span>
+            </h1>
+            <div class='student'>
+                <img src='student pic.png'>
+            </div>
+        </div>
+        <div class='right-container'>
+            <form action="/predict" method="post">
+            <header>
+                <h1>Get your predicted score here!!</h1>
+
+               
+
+                    <div class='set'>
+                        <div class='writing_score'>
+                            <label for='writing_score'>Writing score</label>
+                            <input id='writing_score' placeholder="Writing score" type='number' name="writing_score" min="1" max="100" required>
+                        </div>
+                        <div class='reading_score'>
+                            <label for='reading_score'>Reading score</label>
+                            <input id='reading_score' placeholder="Reading score" type='number' name="reading_score" min="1" max="100" required>
+                        </div>
+                    </div>
+                    <div class='set'>
+                        <div class='student-gender'>
+                            <label for='student-gender-female'>Gender</label>
+                            <div class='radio-container'>
+                                <input checked='' id='student-gender-female' name='gender' type='radio' value='female'>
+                                <label for='student-gender-female'>Female</label>
+                                <input id='student-gender-male' name='gender' type='radio' value='male'>
+                                <label for='student-gender-male'>Male</label>
+                            </div>
+                        </div>
+
+                        <div class='student-lunch'>
+                            <label for='lunch-standard'>Lunch</label>
+                            <div class='radio-container'>
+                                <input checked='' id='lunch-standard' name='lunch' type='radio' value='standard'>
+                                <label for='lunch-standard'>Standard</label>
+                                <input id='lunch-free' name='lunch' type='radio' value='free/reduced'>
+                                <label for='lunch-free'>free</label>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="set">
+                        <div class="student-race">
+                            <label for="cars">Race: </label>
+                            <select id="cars" name="race_ethnicity">
+                                <option value="group A">group A</option>
+                                <option value="group B">group B</option>
+                                <option value="group C">group C</option>
+                                <option value="group D">group D</option>
+                                <option value="group D">group E</option>
+                            </select>
+                        </div>
+
+                        <div class="student-parental-level">
+                            <label for="student-parental-level">Parental level:</label>
+                            <select id="student-parental-level" name="parental_level_of_education">
+                                <option value="bachelor's degree">bachelor's degree</option>
+                                <option value="some college">some college</option>
+                                <option value="master's degree">master's degree</option>
+                                <option value="associate's degree">associate's degree</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="set">
+                        <div class="test_preparation">
+                            <label for="test_preparation">Test Prep </label>
+                            <select id="test_preparation" name="test_preparation_course">
+                                <option value="none">none</option>
+                                <option value="completed">completed</option>
+
+                            </select>
+                        </div>
+                    </div>
+
+
+                
+            </header>
+            <footer>
+                <div class='set'>
+                    <button id='reset' type="reset">Reset</button>
+                    <button id='predict' type="submit">Predict</button>
+                </div>
+            </footer>
+            </form>
+        </div>
+    </div>
+
+</body>
+
+
+</html>

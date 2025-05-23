@@ -1,0 +1,228 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat:400,600&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  align-items: center;
+  background: #d8aa96;
+  color: rgba(0, 0, 0, 0.8);
+  display: grid;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  height: 100vh;
+  justify-items: center;
+}
+
+.signup-container {
+  display: grid;
+  grid-template-areas: "left right";
+  max-width: 900px;
+}
+
+.left-container {
+  background: #807182;
+  overflow: hidden;
+  padding: 40px 0 0 0;
+  position: relative;
+  text-align: center;
+  width: 300px;
+}
+.left-container h1 {
+  color: rgba(0, 0, 0, 0.8);
+  display: inline-block;
+  font-size: 24px;
+}
+.left-container h1 i {
+  background: #f7b1ab;
+  border-radius: 50%;
+  color: #807182;
+  font-size: 24px;
+  margin-right: 5px;
+  padding: 10px;
+  transform: rotate(-45deg);
+}
+.left-container .student{
+  bottom: -5px;
+  position: absolute;
+  text-align: center;
+}
+.left-container .student:before {
+  background: #807182;
+  content: "";
+  height: 100%;
+  left: 0;
+  opacity: 0.4;
+  position: absolute;
+  width: 100%;
+  z-index: 1;
+}
+.left-container img {
+  filter: sepia(100%);
+  width: 70%;
+}
+
+.right-container {
+  background: #f9c7c2;
+  display: grid;
+  grid-template-areas: "." ".";
+  width: 500px;
+}
+.right-container h1:nth-of-type(1) {
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 28px;
+  font-weight: 600;
+}
+.right-container .set {
+  display: flex;
+  justify-content: space-between;
+  margin: 10px 0;
+}
+.right-container input option{
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  height: 38px;
+  line-height: 38px;
+  padding-left: 5px;
+}
+.right-container input,
+.right-container label {
+  color: rgba(0, 0, 0, 0.8);
+}
+.right-container header {
+  padding: 40px;
+}
+.right-container label,
+.right-container input,
+.right-container .reading_score {
+  width: 176px;
+}
+
+
+
+.right-container .student-weight .radio-container {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+.right-container footer {
+  align-items: center;
+  background: #fff;
+  display: grid;
+  padding: 5px 40px;
+}
+.right-container footer button {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  height: 38px;
+  line-height: 38px;
+  width: 100px;
+  border-radius: 19px;
+  font-family: "Montserrat", sans-serif;
+}
+.right-container footer #reset {
+  background: #fff;
+  transition: 0.2s all ease-in-out;
+}
+.right-container footer #reset:hover {
+  background: #171a2b;
+  color: white;
+}
+.right-container footer #predict {
+  background: #807182;
+  border: 1px solid transparent;
+  color: #fff;
+}
+.right-container footer #predict:hover {
+  background: #171a2b;
+}
+
+.writing_score label,
+.reading_score label,
+.student-gender label,
+.student-lunch label,
+.student-race label,
+.student-parental-level label,
+.test_preparation label,
+.student-weight label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+.radio-container {
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 4px;
+  display: inline-block;
+  padding: 5px;
+}
+
+.radio-container label {
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: 2px;
+  display: inline-block;
+  height: 26px;
+  line-height: 26px;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  transition: 0.2s all ease-in-out;
+  width: 80px;
+}
+
+.radio-container input[type=radio] {
+  display: none;
+}
+
+.radio-container input[type=radio]:checked + label {
+  background: #f7b1ab;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+    .student-race select, .student-parental-level select, .test_preparation select{
+        width: 100%;
+        padding: 10px 10px;
+        font-size: 14px;
+        border: 1px solid #f7b1ab;
+        border-radius: 8px;
+        background-color: #fafafa;
+        transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .student-race select:focus, .student-parental-level:focus, .test_preparation:focus{
+        border-color: #f7b1ab;
+        box-shadow: 0 0 5px #f7b1ab;
+        outline: none;
+    }
+
+    .student-race option, .student-parental-level option, .test_preparation option {
+        font-size: 14px;
+    }
+
+
+span {
+  background-color: #fff;
+  padding: 10px 20px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: black;
+
+  border: none;
+  outline: 2px solid black;
+  outline-offset: -5px;
+
+  filter: drop-shadow(1px 0px 0 black)
+          drop-shadow(0px 1px 0 black)
+          drop-shadow(-1px 0px 0 black)
+          drop-shadow(0px -1px 0 black);
+
+  transform: rotate(-0.6deg) skewX(-0.8deg) skewY(0.3deg);
+  display: inline-block;
+}

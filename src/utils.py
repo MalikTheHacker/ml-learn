@@ -36,7 +36,16 @@ def evaluate_models(X_train, y_train, X_test, y_test, models: dict, params: dict
 
             score = r2_score(y_test, y_preds)
 
-            report[model_name] = score
+            report[model_name] = [model, score]
         return report
     except Exception as e:
         raise CustomException(e, sys)
+    
+def load_object(path):
+    try:
+        with open(path, "rb") as file_obj:
+            data = pickle.load(file_obj)
+        return data
+    except Exception as e:
+        raise CustomException(e, sys)
+        
