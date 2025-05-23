@@ -1,7 +1,9 @@
 from flask import Flask, request, render_template
 from src.pipelines.predict_pipeline import PredictPipeline
 
-app = Flask(__name__, template_folder="templates", static_folder="static",static_url_path="/")
+application = Flask(__name__, template_folder="templates", static_folder="static",static_url_path="/")
+
+app = application
 
 @app.route("/")
 def index():
@@ -19,4 +21,4 @@ def predict():
     
 
 if __name__ == "__main__":
-    app.run("0.0.0.0",debug=True)
+    app.run("0.0.0.0")
